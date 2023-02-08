@@ -6,6 +6,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -45,6 +47,13 @@ public class GamePanel extends player {
 
 			label1.setText("order \n" + "1st " + player.getName(0) + "\n2nd " + player.getName(1)+ "\n3rd " + player.getName(2)+ "\n4th " + player.getName(3));
 		}
+	
+	//	Image dessert = new Image("/Habitats/dessert.png");
+		//ImageView imageView = new ImageView(dessert);
+		//imageView.setFitHeight(200);
+		//imageView.setFitWidth(300);
+		//root.getChildren().add(imageView);
+
 		label1.setTextFill(Color.LIGHTGREEN);
 		label1.setStyle("-fx-font-size: 24pt;");
 

@@ -15,7 +15,6 @@ import player.player;
 
 public class Scene2 extends player{
 	private static Scene scene;
-	static player player = new player();
     
 	static {
 		try {
@@ -31,6 +30,7 @@ public class Scene2 extends player{
 			    gettext(textfield2.getText());
 			    player.playercount = 2;
 			    player.shuffle();
+			    player.shufflehabitats();
 			    
 			    Stage stage = (Stage) button5.getScene().getWindow();
 			    stage.setScene(GamePanel.getScene());

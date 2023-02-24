@@ -10,9 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import player.player;
 
-public class scene3{
+public class scene3 extends player{
 	private static Scene scene;
-	static player player = new player();
 
 	static {
 		try {
@@ -29,7 +28,6 @@ public class scene3{
 				gettext(textfield2.getText());
 				gettext(textfield3.getText());
 				player.playercount = 3;
-				player.shuffle();
 				Stage stage = (Stage) button5.getScene().getWindow();
 			    stage.setScene(GamePanel.getScene());
 			    stage.show();

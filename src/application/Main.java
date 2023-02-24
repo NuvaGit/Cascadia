@@ -38,6 +38,7 @@ public class Main extends Application {
 			});  
 			button2.setOnAction(event -> {
 				stage.setScene(Scene2.getScene());
+				
 		        stage.show();
 			});
 			button3.setOnAction(event -> {

@@ -1,8 +1,11 @@
 package application;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,55 +25,49 @@ public class GamePanel extends player {
 	Habitat habitat = new Habitat();
 
 	static {
-		BorderPane root = new BorderPane();
-		Label label = new Label("Player starting habitats");
-		label.setTextFill(Color.LIGHTGREEN);
-		root.setTop(label);
-		root.setAlignment(label, Pos.TOP_CENTER);
-		label.setStyle("-fx-font-size: 36pt;");
-		root.setStyle("-fx-background-color: blue;");
+		FXMLLoader loader = new FXMLLoader(Scene2.class.getResource("GamePanel.fxml"));
+		Parent root;
+		try {
+			root = loader.load();
+			
+			
+			
+			Button button = (Button) root.lookup("#button");
+			Label label1 = (Label) root.lookup("#label1");
+// the first player will always get index 0 to 2 in arraylist of habitats
+			if (player.playercount == 2) {
 
-		// String gg = ;
-		// gg = gg + player.getName(0);
-		player.shufflehabitats();
-		Label label1 = new Label();
+				label1.setText(player.getName(0)+" "+player.getHabitat(0)+" "+" "+player.getHabitat(1)+" "+" "+player.getHabitat(2)+"\n "+player.getName(1)+" "+player.getHabitat(3)+" "+" "+player.getHabitat(4)+" "+" "+player.getHabitat(5));
+			}
+			if (player.playercount == 3) {
 
-		if (player.playercount == 2) {
+			}
+			if (player.playercount == 4) {
 
-			label1.setText("order \n" + "1st " + player.getName(0)+" with habitat "+ player.getHabitat(0)+" Token "+player.StartingWildlifeToken(0)  + "\n2nd " + player.getName(1)+" with habitat "+player.getHabitat(1)+" Token "+player.StartingWildlifeToken(1));
-		}
-		if (player.playercount == 3) {
-
-			label1.setText("order \n" + "1st " + player.getName(0) +" with habitat "+player.getHabitat(0)+" Token "+player.StartingWildlifeToken(0)+ "\n2nd " + player.getName(1)+" with habitat "+player.getHabitat(1)+" Token "+player.StartingWildlifeToken(1)+ "\n3rd " + player.getName(2)+" with habitat "+player.getHabitat(2)+" Token "+player.StartingWildlifeToken(2));
-		}
-		if (player.playercount == 4) {
-
-			label1.setText("order \n" + "1st " + player.getName(0) +"Token "+Habitat.WildlifeToken(0)+ "\n2nd " + player.getName(1)+"Token "+Habitat.WildlifeToken(1)+ "\n3rd " + player.getName(2)+ "\n4th " + player.getName(3)+"Token "+Habitat.WildlifeToken(3));
-		}
-	
-	//	Image dessert = new Image("/Habitats/dessert.png");
-		//ImageView imageView = new ImageView(dessert);
-		//imageView.setFitHeight(200);
-		//imageView.setFitWidth(300);
-		//root.getChildren().add(imageView);
-
-		label1.setTextFill(Color.LIGHTGREEN);
-		label1.setStyle("-fx-font-size: 24pt;");
-
-		Button button = new Button("Continue");
-		button.setMinSize(100, 50);
-		root.setRight(button);
-		button.setOnAction(event -> {
-		 
-		    
-		    Stage stage = (Stage) button.getScene().getWindow();
-		    stage.setScene(GameMain.getScene());
-		    stage.show();
-		});
+			}
+			
+			
+			
+			
+			scene = new Scene(root);
+			button.setOnAction(event -> {
 		
+			    
+			    Stage stage = (Stage) button.getScene().getWindow();
+			    stage.setScene(GameMain.getScene());
+			    stage.show();
+			});
+			
+			
+			
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		root.setCenter(label1);
-		scene = new Scene(root, 800, 600);
+
 	}
 
 	public static Scene getScene() {

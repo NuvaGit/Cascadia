@@ -7,6 +7,7 @@
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
@@ -50,6 +51,30 @@
             <Label id="label1" layoutX="96.0" layoutY="49.0" textFill="#1daa2b">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Rectangle id="rec1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="115.0" layoutY="125.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+            <Rectangle id="rec2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="115.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+            <Rectangle id="rec3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="115.0" layoutY="251.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+            <Rectangle id="rec4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="115.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
+            <Label id="label2" layoutX="29.0" layoutY="148.0" text="Label" textFill="#13d701">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="label3" layoutX="29.0" layoutY="199.0" text="Label" textFill="#13d701">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="label4" layoutX="29.0" layoutY="264.0" text="Label" textFill="#13d701">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="label5" layoutX="29.0" layoutY="325.0" text="Label" textFill="#13d701">
+               <font>
+                  <Font size="13.0" />
                </font>
             </Label>
          </children>

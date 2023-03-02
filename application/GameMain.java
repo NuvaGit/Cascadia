@@ -24,6 +24,22 @@ public class GameMain extends player {
         root = loader.load();
         Board board = new Board(8, 7, 60);
         Rectangle[][] rectangles = board.getRectangles();
+        
+        
+		Rectangle rec1 = (Rectangle) root.lookup("#rec1");
+		Rectangle rec2 = (Rectangle) root.lookup("#rec2");
+		Rectangle rec3 = (Rectangle) root.lookup("#rec3");
+		Rectangle rec4 = (Rectangle) root.lookup("#rec4");
+
+		
+		Label label2 = (Label) root.lookup("#label1");
+		Label label3 = (Label) root.lookup("#label2");
+		Label label4 = (Label) root.lookup("#label3");
+		Label label5 = (Label) root.lookup("#label4");
+		
+
+
+        
 
         for (int row = 0; row < rectangles.length; row++) {
             for (int col = 0; col < rectangles[row].length; col++) {
@@ -31,8 +47,10 @@ public class GameMain extends player {
             }
         }
 
-        rectangles[1][1].setFill(Color.web("#AAFF00"));
-        
+        rectangles[3][3].setFill(player.getHabcolor(player.getHabitat(0)));
+        rectangles[3][4].setFill(player.getHabcolor(player.getHabitat(1)));
+        rectangles[4][3].setFill(player.getHabcolor(player.getHabitat(2)));
+
         
 		Label label1 = (Label) root.lookup("#label1");
 		label1.setText(player.getName(player.CurrentPlayer));

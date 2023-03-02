@@ -16,7 +16,7 @@ public class Board {
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numCols; col++) {
                 Rectangle rect = new Rectangle(startX + col * rectSize, startY + row * rectSize, rectSize, rectSize);
-                rect.setFill(Color.web("#B2BEB5"));
+                rect.setFill(Color.WHITE);
                 rect.setStroke(Color.GREEN);
                 rectangles[row][col] = rect;
             }

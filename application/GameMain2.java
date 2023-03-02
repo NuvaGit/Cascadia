@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -29,7 +30,15 @@ public class GameMain2 extends player {
                 root.getChildren().add(rectangles[row][col]);
             }
         }
-
+        Label label1 = (Label) root.lookup("#label1");
+		label1.setText(player.getName(player.CurrentPlayer));
+		
+		
+		rectangles[3][3].setFill(player.getHabcolor(player.getHabitat(3)));
+        rectangles[3][4].setFill(player.getHabcolor(player.getHabitat(4)));
+        rectangles[4][3].setFill(player.getHabcolor(player.getHabitat(5)));
+		
+		
 		Button button = (Button) root.lookup("#Button1");
 		button.setOnAction(event -> {
 			

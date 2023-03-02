@@ -253,7 +253,18 @@ public static String StartingWildlifeToken(int x) {
 
 
 
+public static String randomhab() {
+	
 
+	
+	
+	
+	
+	
+	return "";
+	
+	
+}
 
 
 

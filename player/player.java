@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
+import javafx.scene.shape.Rectangle;
 
 public class player extends Habitat{
 	
@@ -162,8 +163,8 @@ public static LinearGradient getHabcolor(String x) {
 
 
 
-public static String StartingWildlifeToken(int x) {
-	String tile = player.getHabitat(x);
+public static String StartingWildlifeToken(String x) {
+	String tile = x;
 	System.out.println(tile);
 	if(tile == "Mountain") {
 		switch((int) Math.round(Math.random()*2)){
@@ -246,7 +247,7 @@ public static String StartingWildlifeToken(int x) {
 		
 	
 	
-	return "";
+	return wT.BEAR.toString();
 
 
 }
@@ -255,13 +256,37 @@ public static String StartingWildlifeToken(int x) {
 
 public static String randomhab() {
 	
+    switch((int) Math.round(Math.random()*11)){
 
-	
-	
-	
-	
-	
-	return "";
+    case 0: 
+    	return hT.Forest.toString();
+    	
+    case 1:
+    	return hT.Forest_Mountain.toString();
+    	
+    case 2:
+    	return hT.Forest_Prairie.toString();
+    case 3:
+    	return hT.Forest_River.toString();
+    case 4:
+    	return hT.Forest_Wetland.toString();
+    case 5:
+    	return hT.Mountain.toString();
+    case 6:
+    	return hT.Prairie.toString();
+    case 7:
+    	return hT.River.toString();
+    case 8:
+    return hT.Wetland.toString();
+    case 9:
+    	return hT.Wetland_Mountain.toString();
+    case 10:
+    	return hT.Wetland_Mountain.toString();
+    case 11:
+    	return hT.Wetland_Prairie.toString();
+    
+    }
+    return "";
 	
 	
 }
@@ -274,8 +299,23 @@ public static String randomhab() {
 
 
 
+public static boolean isValidClick(int row, int col,Rectangle[][] rectangles) {
+    // Check if the rectangle is adjacent to a filled rectangle
+    if (row > 0 && rectangles[row - 1][col].getFill() != Color.WHITE) {
+        return true;
+    }
+    if ( rectangles[row + 1][col].getFill() != Color.WHITE) {
+        return true;
+    }
+    if (col > 0 && rectangles[row][col - 1].getFill() != Color.WHITE) {
+        return true;
+    }
+    if (rectangles[row][col + 1].getFill() != Color.WHITE) {
+        return true;
+    }
 
-
+    return false;
+}
 
 
 

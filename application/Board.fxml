@@ -57,22 +57,22 @@
             <Rectangle id="rec2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="115.0" layoutY="186.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
             <Rectangle id="rec3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="115.0" layoutY="251.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
             <Rectangle id="rec4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="115.0" layoutY="312.0" stroke="BLACK" strokeType="INSIDE" width="55.0" />
-            <Label id="label2" layoutX="29.0" layoutY="148.0" text="Label" textFill="#13d701">
+            <Label id="label2" layoutX="14.0" layoutY="138.0" text="Label" textFill="#13d701">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label id="label3" layoutX="29.0" layoutY="199.0" text="Label" textFill="#13d701">
+            <Label id="label3" layoutX="14.0" layoutY="199.0" text="Label" textFill="#13d701">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label id="label4" layoutX="29.0" layoutY="264.0" text="Label" textFill="#13d701">
+            <Label id="label4" layoutX="14.0" layoutY="264.0" text="Label" textFill="#13d701">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label id="label5" layoutX="29.0" layoutY="325.0" text="Label" textFill="#13d701">
+            <Label id="label5" layoutX="14.0" layoutY="325.0" text="Label" textFill="#13d701">
                <font>
                   <Font size="13.0" />
                </font>

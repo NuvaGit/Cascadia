@@ -46,12 +46,22 @@ public class GameMain extends player {
 		Rectangle rec4 = (Rectangle) root.lookup("#rec4");
 
 		
-		Label label2 = (Label) root.lookup("#label1");
-		Label label3 = (Label) root.lookup("#label2");
-		Label label4 = (Label) root.lookup("#label3");
-		Label label5 = (Label) root.lookup("#label4");
+		Label label2 = (Label) root.lookup("#label2");
+		Label label3 = (Label) root.lookup("#label3");
+		Label label4 = (Label) root.lookup("#label4");
+		Label label5 = (Label) root.lookup("#label5");
 		
+// tristan inset function in here xd 
+		label2.setText("");
+		label3.setText("");
+		label4.setText("");
+		label5.setText("");
 
+		
+		rec1.setFill(player.getHabcolor(label2.getText()));
+        rec2.setFill(player.getHabcolor(label3.getText()));
+        rec3.setFill(player.getHabcolor(label3.getText()));
+        rec4.setFill(player.getHabcolor(label3.getText()));
 
         
 

@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -13,10 +14,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import player.Board;
+import player.Tile;
 import player.player;
 
 public class GameMain extends player {
     private static Scene scene;
+    
+    public static int i = 0;
 	///---------------------------------------------------------------
 	///---------------------------------------------------------------
 	///---------------------------------------------------------------
@@ -47,6 +51,7 @@ public class GameMain extends player {
 		Rectangle rec3 = (Rectangle) root.lookup("#rec3");
 		Rectangle rec4 = (Rectangle) root.lookup("#rec4");
 
+
 		
 		Label label2 = (Label) root.lookup("#label2");
 		Label label3 = (Label) root.lookup("#label3");
@@ -59,10 +64,10 @@ public class GameMain extends player {
 		Label label9 = (Label) root.lookup("#label9");
 
 // tristan inset function in here xd 
-		label2.setText(player.randomhab());
-		label3.setText(player.randomhab());
-		label4.setText(player.randomhab());
-		label5.setText(player.randomhab());
+		label2.setText(Tile.randomTile().toString());
+		label3.setText(Tile.randomTile().toString());
+		label4.setText(Tile.randomTile().toString());
+		label5.setText(Tile.randomTile().toString());
 		label6.setText(player.StartingWildlifeToken(label2.getText()));
 		label6.setTextFill(Color.WHITE);
 		label7.setText(player.StartingWildlifeToken(label3.getText()));
@@ -154,7 +159,17 @@ public class GameMain extends player {
 		
 		
 		
-		
+		Button gg = (Button) root.lookup("#switch");
+		AnchorPane gg1 = (AnchorPane) root.lookup("#boardPane");
+
+		gg.setOnAction(event -> {
+		    if (i % 2 == 0) {
+		        gg1.setStyle("-fx-background-color: black;");
+		    } else {
+		        gg1.setStyle("-fx-background-color: lime;");
+		    }
+		    i++; // Increment the i variable after each button click
+		});
 		
 		Button button = (Button) root.lookup("#Button1");
 		button.setOnAction(event -> {

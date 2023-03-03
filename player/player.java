@@ -169,13 +169,13 @@ public static String StartingWildlifeToken(String x) {
 	if(tile == "Mountain") {
 		switch((int) Math.round(Math.random()*2)){
         case 0:
-            animal1 = wT.BEAR;
+            animal1 = tokenEnum.BEAR;
             break;
         case 1:
-            animal1 = wT.HAWK;
+            animal1 = tokenEnum.HAWK;
             break;
         case 2:
-            animal1 = wT.ELK;
+            animal1 = tokenEnum.ELK;
             break;
 	}
     	return animal1.toString();
@@ -184,16 +184,16 @@ public static String StartingWildlifeToken(String x) {
 		if(tile == "Forest") {
 	        switch((int) Math.round(Math.random()*3)){
             case 0:
-                animal1 = wT.BEAR;
+                animal1 = tokenEnum.BEAR;
                 break;
             case 1:
-                animal1 = wT.HAWK;
+                animal1 = tokenEnum.HAWK;
                 break;
             case 2:
-                animal1 = wT.ELK;
+                animal1 = tokenEnum.ELK;
                 break;
             case 3:
-                animal1 = wT.FOX;
+                animal1 = tokenEnum.FOX;
                 break;
         }
         	return animal1.toString();
@@ -202,13 +202,13 @@ public static String StartingWildlifeToken(String x) {
 	        if(tile == "Prairie") {
 	            switch((int) Math.round(Math.random()*2)){
                 case 0:
-                    animal1 = wT.HAWK;
+                    animal1 = tokenEnum.HAWK;
                     break;
                 case 1:
-                    animal1 = wT.ELK;
+                    animal1 = tokenEnum.ELK;
                     break;
                 case 2:
-                    animal1 = wT.FOX;
+                    animal1 = tokenEnum.FOX;
                     break;
             }
 	        	return animal1.toString();
@@ -217,13 +217,13 @@ public static String StartingWildlifeToken(String x) {
 	        if(tile == "River") {
 	        	switch((int) Math.round(Math.random()*2)){
                 case 0:
-                    animal1 = wT.SALMON;
+                    animal1 = tokenEnum.SALMON;
                     break;
                 case 1:
-                    animal1 = wT.HAWK;
+                    animal1 = tokenEnum.HAWK;
                     break;
                 case 2:
-                    animal1 = wT.FOX;
+                    animal1 = tokenEnum.FOX;
                     break;
             }
 	        	return animal1.toString();
@@ -232,13 +232,13 @@ public static String StartingWildlifeToken(String x) {
 	        if(tile == "Wetland") {
 	        	switch((int) Math.round(Math.random()*2)){
                 case 0:
-                    animal1 = wT.SALMON;
+                    animal1 = tokenEnum.SALMON;
                     break;
                 case 1:
-                    animal1 = wT.HAWK;
+                    animal1 = tokenEnum.HAWK;
                     break;
                 case 2:
-                    animal1 = wT.BEAR;
+                    animal1 = tokenEnum.BEAR;
                     break;
             }
 	        	return animal1.toString();
@@ -247,49 +247,14 @@ public static String StartingWildlifeToken(String x) {
 		
 	
 	
-	return wT.BEAR.toString();
+	return tokenEnum.BEAR.toString();
 
 
 }
 
 
 
-public static String randomhab() {
-	
-    switch((int) Math.round(Math.random()*11)){
 
-    case 0: 
-    	return hT.Forest.toString();
-    	
-    case 1:
-    	return hT.Forest_Mountain.toString();
-    	
-    case 2:
-    	return hT.Forest_Prairie.toString();
-    case 3:
-    	return hT.Forest_River.toString();
-    case 4:
-    	return hT.Forest_Wetland.toString();
-    case 5:
-    	return hT.Mountain.toString();
-    case 6:
-    	return hT.Prairie.toString();
-    case 7:
-    	return hT.River.toString();
-    case 8:
-    return hT.Wetland.toString();
-    case 9:
-    	return hT.Wetland_Mountain.toString();
-    case 10:
-    	return hT.Wetland_Mountain.toString();
-    case 11:
-    	return hT.Wetland_Prairie.toString();
-    
-    }
-    return "";
-	
-	
-}
 
 
 

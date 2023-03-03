@@ -7,9 +7,9 @@ import java.util.HashMap;
 import javafx.scene.image.Image;
 
 public class Habitat {
-    static wT animal1;
-    static  wT animal2;
-    static wT animal3;
+    static tokenEnum animal1;
+    static  tokenEnum animal2;
+    static tokenEnum animal3;
     
     
 	

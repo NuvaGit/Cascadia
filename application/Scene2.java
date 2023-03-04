@@ -43,7 +43,6 @@ public class Scene2 extends player{
 			    gettext(textfield2.getText());
 			    player.playercount = 2;
 			    player.shuffle();
-			    player.shufflehabitats();
 			    
 			    Stage stage = (Stage) button5.getScene().getWindow();
 			    stage.setScene(GamePanel.getScene());

@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.Paint;
 import javafx.scene.paint.Stop;
 import javafx.scene.shape.Rectangle;
 
@@ -38,105 +39,45 @@ public static String getName(int x) {
 public static void shuffle() {
 	Collections.shuffle(names);
 }
-public static void shufflehabitats() {
-	Collections.shuffle(habittats);
-}
 
 
-public static  String getHabitat(int x) {
-	return habittats.get(x);
-}
 
 
-public static LinearGradient getHabcolor(String x) {
+
+
+public static LinearGradient getHabcolor(Tile x) {
 
 	
 	
 	
-	if(x == "Forest_Wetland") {
+	if(x.getLandType() == habitatEnum.Forest && x.getLandType2() == habitatEnum.Empty) {
 		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#90EE90")),
-		        new Stop(0.5,Color.web("#90EE90")),
-		        new Stop(0.5, Color.web("#023020")),
-		        new Stop(1,Color.web("#023020")));	
+		        new Stop(0, Color.web("#32CD32")),
+		        new Stop(0.5,Color.web("#32CD32")),
+		        new Stop(0.5, Color.web("#32CD32")),
+		        new Stop(1,Color.web("#32CD32")));	
 		return gradient;
 
 	}
-	else if(x == "Forest_River") {
+	else if(x.getLandType() == habitatEnum.Mountain&&x.getLandType2() == habitatEnum.Empty) {
 		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#90EE90")),
-		        new Stop(0.5,Color.web("#90EE90")),
-		        new Stop(0.5, Color.web("#ADD8E6")),
-		        new Stop(1,Color.web("#ADD8E6")));	
+		        new Stop(0, Color.web("#B2BEB5")),
+		        new Stop(0.5,Color.web("#B2BEB5")),
+		        new Stop(0.5, Color.web("#B2BEB5")),
+		        new Stop(1,Color.web("#B2BEB5")));	
 		return gradient;
 
 	}
-	else if(x == "Forest_Mountain") {
+	else if(x.getLandType() == habitatEnum.Prairie && x.getLandType2() == habitatEnum.Empty) {
 		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#90EE90")),
-		        new Stop(0.5,Color.web("#90EE90")),
-		        new Stop(0.5, Color.web("#D3D3D3")),
-		        new Stop(1,Color.web("#D3D3D3")));	
+		        new Stop(0, Color.web("#FFFF00")),
+		        new Stop(0.5,Color.web("#FFFF00")),
+		        new Stop(0.5, Color.web("#FFFF00")),
+		        new Stop(1,Color.web("#FFFF00")));	
 		return gradient;
 
 	}
-	else if(x == "Forest_Prairie") {
-		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#90EE90")),
-		        new Stop(0.5,Color.web("#90EE90")),
-		        new Stop(0.5, Color.web("#ffff00")),
-		        new Stop(1,Color.web("#ffff00")));	
-		return gradient;
-	}
-	else if(x == "Wetland_River") {
-		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#023020")),
-		        new Stop(0.5,Color.web("#023020")),
-		        new Stop(0.5, Color.web("#ADD8E6")),
-		        new Stop(1,Color.web("#ADD8E6")));	
-		return gradient;
-	}
-	else if(x == "Wetland_Mountain") {
-		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#023020")),
-		        new Stop(0.5,Color.web("#023020")),
-		        new Stop(0.5, Color.web("#D3D3D3")),
-		        new Stop(1,Color.web("#D3D3D3")));	
-		return gradient;
-	}
-	else if(x == "Wetland_Prairie") {
-		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#023020")),
-		        new Stop(0.5,Color.web("#023020")),
-		        new Stop(0.5, Color.web("#ffff00")),
-		        new Stop(1,Color.web("#ffff00")));	
-		return gradient;
-	}
-	else if(x == "Wetland") {
-		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#023020")),
-		        new Stop(0.5,Color.web("#023020")),
-		        new Stop(0.5, Color.web("#023020")),
-		        new Stop(1,Color.web("#023020")));	
-		return gradient;
-	}
-	else if(x == "Prairie") {
-		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#ffff00")),
-		        new Stop(0.5,Color.web("#ffff00")),
-		        new Stop(0.5, Color.web("#ffff00")),
-		        new Stop(1,Color.web("#ffff00")));	
-		return gradient;
-	}
-	else if(x == "Mountain") {
-		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#D3D3D3")),
-		        new Stop(0.5,Color.web("#D3D3D3")),
-		        new Stop(0.5, Color.web("#D3D3D3")),
-		        new Stop(1,Color.web("#D3D3D3")));	
-		return gradient;
-	}
-	else if(x == "River") {
+	else if(x.getLandType() == habitatEnum.River && x.getLandType2() == habitatEnum.Empty) {
 		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
 		        new Stop(0, Color.web("#ADD8E6")),
 		        new Stop(0.5,Color.web("#ADD8E6")),
@@ -144,17 +85,103 @@ public static LinearGradient getHabcolor(String x) {
 		        new Stop(1,Color.web("#ADD8E6")));	
 		return gradient;
 	}
-	else if(x == "Forest") {
+	else if(x.getLandType() == habitatEnum.Wetland&&x.getLandType2() == habitatEnum.Empty) {
 		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-		        new Stop(0, Color.web("#90EE90")),
-		        new Stop(0.5,Color.web("#90EE90")),
-		        new Stop(0.5, Color.web("#90EE90")),
-		        new Stop(1,Color.web("#90EE90")));	
+		        new Stop(0, Color.web("#023020")),
+		        new Stop(0.5,Color.web("#023020")),
+		        new Stop(0.5, Color.web("#023020")),
+		        new Stop(1,Color.web("#023020")));	
+		return gradient;
+	}
+	else if(x.getLandType() == habitatEnum.Wetland && x.getLandType2() == habitatEnum.Forest || x.getLandType2() == habitatEnum.Wetland && x.getLandType() == habitatEnum.Forest) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#023020")),
+		        new Stop(0.5,Color.web("#023020")),
+		        new Stop(0.5, Color.web("#32CD32")),
+		        new Stop(1,Color.web("#32CD32")));	
+		return gradient;
+	}
+	else if(x.getLandType() ==habitatEnum.Wetland&& x.getLandType2() == habitatEnum.Mountain || x.getLandType2() ==habitatEnum.Wetland&& x.getLandType() == habitatEnum.Mountain) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#023020")),
+		        new Stop(0.5,Color.web("#023020")),
+		        new Stop(0.5, Color.web("#B2BEB5")),
+		        new Stop(1,Color.web("#B2BEB5")));	
 		return gradient;
 	}
 	
+	else if(x.getLandType() ==habitatEnum.Wetland&& x.getLandType2() == habitatEnum.River || x.getLandType2() ==habitatEnum.Wetland&& x.getLandType() == habitatEnum.River) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#023020")),
+		        new Stop(0.5,Color.web("#023020")),
+		        new Stop(0.5, Color.web("#ADD8E6")),
+		        new Stop(1,Color.web("#ADD8E6")));	
+		return gradient;
+	}
+	else if(x.getLandType() ==habitatEnum.Wetland&& x.getLandType2() == habitatEnum.Prairie || x.getLandType2() ==habitatEnum.Wetland&& x.getLandType() == habitatEnum.Prairie) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#023020")),
+		        new Stop(0.5,Color.web("#023020")),
+		        new Stop(0.5, Color.web("#FFFF00")),
+		        new Stop(1,Color.web("#FFFF00")));	
+		return gradient;
+	}
+	else if(x.getLandType() ==habitatEnum.Forest&& x.getLandType2() == habitatEnum.Mountain || x.getLandType2() ==habitatEnum.Forest&& x.getLandType() == habitatEnum.Mountain) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#32CD32")),
+		        new Stop(0.5,Color.web("#32CD32")),
+		        new Stop(0.5, Color.web("#B2BEB5")),
+		        new Stop(1,Color.web("#B2BEB5")));	
+		return gradient;
+	}
+	else if(x.getLandType() ==habitatEnum.Forest&& x.getLandType2() == habitatEnum.River || x.getLandType2() ==habitatEnum.Forest&& x.getLandType() == habitatEnum.River) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#32CD32")),
+		        new Stop(0.5,Color.web("#32CD32")),
+		        new Stop(0.5, Color.web("#ADD8E6")),
+		        new Stop(1,Color.web("#ADD8E6")));	
+		return gradient;
+	}
+	else if(x.getLandType() ==habitatEnum.Forest&& x.getLandType2() == habitatEnum.Prairie || x.getLandType2() ==habitatEnum.Forest&& x.getLandType() == habitatEnum.Prairie) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#32CD32")),
+		        new Stop(0.5,Color.web("#32CD32")),
+		        new Stop(0.5, Color.web("#FFFF00")),
+		        new Stop(1,Color.web("#FFFF00")));	
+		return gradient;
+	}
+	else if(x.getLandType() ==habitatEnum.Mountain&& x.getLandType2() == habitatEnum.River || x.getLandType2() ==habitatEnum.Mountain&& x.getLandType() == habitatEnum.River) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#B2BEB5")),
+		        new Stop(0.5,Color.web("#B2BEB5")),
+		        new Stop(0.5, Color.web("#ADD8E6")),
+		        new Stop(1,Color.web("#ADD8E6")));	
+		return gradient;
+	}
+	else if(x.getLandType() ==habitatEnum.Mountain&& x.getLandType2() == habitatEnum.Prairie || x.getLandType2() ==habitatEnum.Mountain&& x.getLandType() == habitatEnum.Prairie) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#B2BEB5")),
+		        new Stop(0.5,Color.web("#B2BEB5")),
+		        new Stop(0.5, Color.web("#FFFF00")),
+		        new Stop(1,Color.web("#FFFF00")));	
+		return gradient;
+	}
+
+	else if(x.getLandType() ==habitatEnum.River&& x.getLandType2() == habitatEnum.Prairie || x.getLandType2() ==habitatEnum.River&& x.getLandType() == habitatEnum.Prairie) {
+		LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+		        new Stop(0, Color.web("#ADD8E6")),
+		        new Stop(0.5,Color.web("#ADD8E6")),
+		        new Stop(0.5, Color.web("#FFFF00")),
+		        new Stop(1,Color.web("#FFFF00")));	
+		return gradient;
+	}
 	
-	return null;
+	LinearGradient gradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+	        new Stop(0, Color.web("#90EE90")),
+	        new Stop(0.5,Color.web("#90EE90")),
+	        new Stop(0.5, Color.web("#90EE90")),
+	        new Stop(1,Color.web("#90EE90")));
+	return gradient;
 	
 }
 
@@ -162,11 +189,10 @@ public static LinearGradient getHabcolor(String x) {
 
 
 
+// should take in tile 
 
-public static String StartingWildlifeToken(String x) {
-	String tile = x;
-	System.out.println(tile);
-	if(tile == "Mountain") {
+public static String StartingWildlifeToken(Tile x) {
+	if(x.landType == habitatEnum.Mountain) {
 		switch((int) Math.round(Math.random()*2)){
         case 0:
             animal1 = tokenEnum.BEAR;
@@ -181,7 +207,7 @@ public static String StartingWildlifeToken(String x) {
     	return animal1.toString();
 
 	}
-		if(tile == "Forest") {
+		if(x.landType == habitatEnum.Forest) {
 	        switch((int) Math.round(Math.random()*3)){
             case 0:
                 animal1 = tokenEnum.BEAR;
@@ -199,7 +225,7 @@ public static String StartingWildlifeToken(String x) {
         	return animal1.toString();
 
 		}
-	        if(tile == "Prairie") {
+	        if(x.landType == habitatEnum.Prairie) {
 	            switch((int) Math.round(Math.random()*2)){
                 case 0:
                     animal1 = tokenEnum.HAWK;
@@ -214,7 +240,7 @@ public static String StartingWildlifeToken(String x) {
 	        	return animal1.toString();
 
 	        }
-	        if(tile == "River") {
+	        if(x.landType == habitatEnum.River) {
 	        	switch((int) Math.round(Math.random()*2)){
                 case 0:
                     animal1 = tokenEnum.SALMON;
@@ -229,7 +255,7 @@ public static String StartingWildlifeToken(String x) {
 	        	return animal1.toString();
 
 	        }
-	        if(tile == "Wetland") {
+	        if(x.landType == habitatEnum.Wetland) {
 	        	switch((int) Math.round(Math.random()*2)){
                 case 0:
                     animal1 = tokenEnum.SALMON;
@@ -301,6 +327,9 @@ public void setPlayerCount(int x) {
     // TODO Auto-generated method stub
 	playercount = x;
 }
+
+
+
 
 
 

@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import player.Habitat;
 import player.player;
@@ -50,16 +51,16 @@ public class GamePanel extends player {
 // the first player will always get index 0 to 2 in arraylist of habitats
 			if (player.playercount == 2) {
 
-				label1.setText(player.getName(0)+" "+player.getHabitat(0)+" "+" "+player.getHabitat(1)+" "+" "+player.getHabitat(2)+"\n "+player.getName(1)+" "+player.getHabitat(3)+" "+" "+player.getHabitat(4)+" "+" "+player.getHabitat(5));
+				label1.setText("1st: "+player.getName(0)+"\n"+"2nd: "+player.getName(1));
 			}
 			if (player.playercount == 3) {
-				label1.setText(player.getName(0)+" "+player.getHabitat(0)+" "+" "+player.getHabitat(1)+" "+" "+player.getHabitat(2)+"\n "+player.getName(1)+" "+player.getHabitat(3)+" "+" "+player.getHabitat(4)+" "+" "+player.getHabitat(5)+"\n"+"3rd"+player.getName(2)+" "+player.getHabitat(6)+" "+player.getHabitat(7)+" "+player.getHabitat(8));;
+				label1.setText("1st: "+player.getName(0)+"\n"+"2nd: "+player.getName(1)+"\n"+"3rd: "+player.getName(2));;
 
 			}
 			if (player.playercount == 4) {
 
 			}
-			
+	        label1.setFont(Font.font("Arial", 30));
 			
 			
 			

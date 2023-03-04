@@ -62,26 +62,40 @@ public class GameMain extends player {
 		Label label7 = (Label) root.lookup("#label7");
 		Label label8 = (Label) root.lookup("#label8");
 		Label label9 = (Label) root.lookup("#label9");
+		
+		
+		
+		// gonna do starting tiles here 
+		Tile start1 = Tile.randomTile();
+		Tile start2 = Tile.randomTile();
+		Tile start3 = Tile.randomTile();
+
 
 // tristan inset function in here xd 
-		label2.setText(Tile.randomTile().toString());
-		label3.setText(Tile.randomTile().toString());
-		label4.setText(Tile.randomTile().toString());
-		label5.setText(Tile.randomTile().toString());
-		label6.setText(player.StartingWildlifeToken(label2.getText()));
+		Tile tile1 = Tile.randomTile();
+		Tile tile2 = Tile.randomTile();
+		Tile tile3 = Tile.randomTile();
+		Tile tile4 = Tile.randomTile();
+
+		
+		label2.setText(tile1.toString());
+		label3.setText(tile2.toString());
+		label4.setText(tile3.toString());
+		label5.setText(tile4.toString());
+		label6.setText(player.StartingWildlifeToken(tile1));
 		label6.setTextFill(Color.WHITE);
-		label7.setText(player.StartingWildlifeToken(label3.getText()));
+		label7.setText(player.StartingWildlifeToken(tile2));
 		label7.setTextFill(Color.WHITE);
-		label8.setText(player.StartingWildlifeToken(label4.getText()));
+		label8.setText(player.StartingWildlifeToken(tile3));
 		label8.setTextFill(Color.WHITE);
-		label9.setText(player.StartingWildlifeToken(label5.getText()));
+		label9.setText(player.StartingWildlifeToken(tile4));
 		label9.setTextFill(Color.WHITE);
 
 
-		rec1.setFill(player.getHabcolor(label2.getText()));
-        rec2.setFill(player.getHabcolor(label3.getText()));
-        rec3.setFill(player.getHabcolor(label4.getText()));
-        rec4.setFill(player.getHabcolor(label5.getText()));
+		rec1.setFill(player.getHabcolor(tile1));
+        rec2.setFill(player.getHabcolor(tile2));
+        rec3.setFill(player.getHabcolor(tile3));
+        rec4.setFill(player.getHabcolor(tile4));
 
       
 
@@ -91,11 +105,11 @@ public class GameMain extends player {
             }
         }
 
-        
-        rectangles[3][3].setFill(player.getHabcolor(player.getHabitat(0)));
-        rectangles[3][4].setFill(player.getHabcolor(player.getHabitat(1)));
-        rectangles[4][3].setFill(player.getHabcolor(player.getHabitat(2)));
-        Text text = new Text(player.StartingWildlifeToken(player.getHabitat(0)));
+        // satrting habs
+        rectangles[3][3].setFill(player.getHabcolor(start1));
+        rectangles[3][4].setFill(player.getHabcolor(start2));
+        rectangles[4][3].setFill(player.getHabcolor(start3));
+        Text text = new Text(player.StartingWildlifeToken(start1));
         text.setFont(Font.font("Arial", 18));
         text.setFill(Color.WHITE);
         text.setX(rectangles[3][3].getX() + (rectangles[3][3].getWidth() - text.getLayoutBounds().getWidth()) / 2);
@@ -103,7 +117,7 @@ public class GameMain extends player {
 
         root.getChildren().add(text);
         
-        Text text1 = new Text(player.StartingWildlifeToken(player.getHabitat(1)));
+        Text text1 = new Text(player.StartingWildlifeToken(start2));
         text1.setFont(Font.font("Arial", 18));
         text1.setFill(Color.WHITE);
         text1.setX(rectangles[3][4].getX() + (rectangles[3][4].getWidth() - text.getLayoutBounds().getWidth()) / 2);
@@ -112,7 +126,7 @@ public class GameMain extends player {
         root.getChildren().add(text1);
 		
         
-        Text text2 = new Text(player.StartingWildlifeToken(player.getHabitat(2)));
+        Text text2 = new Text(player.StartingWildlifeToken(start3));
         text2.setFont(Font.font("Arial", 18));
         text2.setFill(Color.WHITE);
         text2.setX(rectangles[4][3].getX() + (rectangles[4][3].getWidth() - text.getLayoutBounds().getWidth()) / 2);
@@ -158,17 +172,21 @@ public class GameMain extends player {
 		
 		
 		
-		
-		Button gg = (Button) root.lookup("#switch");
+		Button invert = (Button) root.lookup("#switch");
 		AnchorPane gg1 = (AnchorPane) root.lookup("#boardPane");
+		invert.setText("Invert");
 
-		gg.setOnAction(event -> {
-		    if (i % 2 == 0) {
+		invert.setOnAction(event -> {
+			System.out.println(label2.getText());
+			System.out.println(label1.getText());
+			System.out.println(label3.getText());
+
+			if (i % 2 == 0) {
 		        gg1.setStyle("-fx-background-color: black;");
 		    } else {
-		        gg1.setStyle("-fx-background-color: lime;");
+		        gg1.setStyle("-fx-background-color: blue;");
 		    }
-		    i++; // Increment the i variable after each button click
+		    i++; 
 		});
 		
 		Button button = (Button) root.lookup("#Button1");

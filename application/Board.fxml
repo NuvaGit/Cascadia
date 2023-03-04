@@ -77,10 +77,10 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label id="label6" layoutX="129.0" layoutY="140.0" text="Label" />
-            <Label id="label7" layoutX="129.0" layoutY="201.0" text="Label" />
-            <Label id="label8" layoutX="129.0" layoutY="265.0" text="Label" />
-            <Label id="label9" layoutX="129.0" layoutY="327.0" text="Label" />
+            <Label id="label6" layoutX="129.0" layoutY="140.0" mouseTransparent="true" text="Label" />
+            <Label id="label7" layoutX="129.0" layoutY="201.0" mouseTransparent="true" text="Label" />
+            <Label id="label8" layoutX="129.0" layoutY="265.0" mouseTransparent="true" text="Label" />
+            <Label id="label9" layoutX="129.0" layoutY="327.0" mouseTransparent="true" text="Label" />
             <Button id="switch" layoutX="117.0" layoutY="525.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-background-radius: 100; -fx-background-color: lime;" text="Button" />
          </children>
       </AnchorPane>

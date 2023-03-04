@@ -19,7 +19,7 @@ import player.player;
 
 public class GameMain extends player {
     private static Scene scene;
-    
+    public static boolean placed = true;
     public static int i = 0;
 	///---------------------------------------------------------------
 	///---------------------------------------------------------------
@@ -45,23 +45,24 @@ public class GameMain extends player {
         Board board = new Board(8, 7, 60);
         Rectangle[][] rectangles = board.getRectangles();
         
-        
+        // rec1-4 display random hab tiles
 		Rectangle rec1 = (Rectangle) root.lookup("#rec1");
 		Rectangle rec2 = (Rectangle) root.lookup("#rec2");
 		Rectangle rec3 = (Rectangle) root.lookup("#rec3");
 		Rectangle rec4 = (Rectangle) root.lookup("#rec4");
 
 
-		
+		// these are the labels for rec 1-4
 		Label label2 = (Label) root.lookup("#label2");
 		Label label3 = (Label) root.lookup("#label3");
 		Label label4 = (Label) root.lookup("#label4");
 		Label label5 = (Label) root.lookup("#label5");
 		
-		Label label6 = (Label) root.lookup("#label6");
-		Label label7 = (Label) root.lookup("#label7");
-		Label label8 = (Label) root.lookup("#label8");
-		Label label9 = (Label) root.lookup("#label9");
+		// these labels are for the wildlife tokend of rec 1-4
+		Label wildlifetoken1 = (Label) root.lookup("#label6");
+		Label wildlifetoken2 = (Label) root.lookup("#label7");
+		Label wildlifetoken3 = (Label) root.lookup("#label8");
+		Label wildlifetoken4 = (Label) root.lookup("#label9");
 		
 		
 		
@@ -71,7 +72,7 @@ public class GameMain extends player {
 		Tile start3 = Tile.randomTile();
 
 
-// tristan inset function in here xd 
+// random tiles for rec 1-4
 		Tile tile1 = Tile.randomTile();
 		Tile tile2 = Tile.randomTile();
 		Tile tile3 = Tile.randomTile();
@@ -82,14 +83,14 @@ public class GameMain extends player {
 		label3.setText(tile2.toString());
 		label4.setText(tile3.toString());
 		label5.setText(tile4.toString());
-		label6.setText(player.StartingWildlifeToken(tile1));
-		label6.setTextFill(Color.WHITE);
-		label7.setText(player.StartingWildlifeToken(tile2));
-		label7.setTextFill(Color.WHITE);
-		label8.setText(player.StartingWildlifeToken(tile3));
-		label8.setTextFill(Color.WHITE);
-		label9.setText(player.StartingWildlifeToken(tile4));
-		label9.setTextFill(Color.WHITE);
+		wildlifetoken1.setText(player.StartingWildlifeToken(tile1));
+		wildlifetoken1.setTextFill(Color.WHITE);
+		wildlifetoken2.setText(player.StartingWildlifeToken(tile2));
+		wildlifetoken2.setTextFill(Color.WHITE);
+		wildlifetoken3.setText(player.StartingWildlifeToken(tile3));
+		wildlifetoken3.setTextFill(Color.WHITE);
+		wildlifetoken4.setText(player.StartingWildlifeToken(tile4));
+		wildlifetoken4.setTextFill(Color.WHITE);
 
 
 		rec1.setFill(player.getHabcolor(tile1));
@@ -144,32 +145,131 @@ public class GameMain extends player {
 		
 		
 		
-		
 		// rec clicked
-		rec1.setOnMouseClicked(event -> {			
+		rec1.setOnMouseClicked(event -> {	
+			
 			rectangles[4][4].setOnMouseClicked(e -> {
-				rectangles[4][4].setFill(rec1.getFill());
+				if(player.isValidClick(4, 4, rectangles) == true) {
+					rectangles[4][4].setFill(rec1.getFill());
+
+					}				
+			});
+			rectangles[3][5].setOnMouseClicked(e -> {
+				if(player.isValidClick(3, 5, rectangles) == true) {
+				rectangles[3][5].setFill(rec1.getFill());
+
+				}
 			});
 			rectangles[4][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 5, rectangles) == true) {
 				rectangles[4][5].setFill(rec1.getFill());
+
 				}
 			});
 			rectangles[4][6].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 6, rectangles) == true) {
-					rectangles[4][6].setFill(rec1.getFill());
-					}			});
+				rectangles[4][6].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[4][0].setOnMouseClicked(e -> {
+				if(player.isValidClick(4, 0, rectangles) == true) {
+					rectangles[4][0].setFill(rec1.getFill());
+
+					}				
+			});
+			rectangles[4][1].setOnMouseClicked(e -> {
+				if(player.isValidClick(4, 1, rectangles) == true) {
+				rectangles[4][1].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[4][2].setOnMouseClicked(e -> {
+				if(player.isValidClick(4, 2, rectangles) == true) {
+				rectangles[4][2].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[3][0].setOnMouseClicked(e -> {
+				if(player.isValidClick(3, 0, rectangles) == true) {
+				rectangles[3][0].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[3][1].setOnMouseClicked(e -> {
+				if(player.isValidClick(3, 1, rectangles) == true) {
+				rectangles[3][1].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[3][2].setOnMouseClicked(e -> {
+				if(player.isValidClick(3, 2, rectangles) == true) {
+				rectangles[3][2].setFill(rec1.getFill());
+
+				}
+			});
 			rectangles[3][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 5, rectangles) == true) {
-					rectangles[3][5].setFill(rec1.getFill());
-					}			});
-		
+				rectangles[3][5].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[3][6].setOnMouseClicked(e -> {
+				if(player.isValidClick(3, 6, rectangles) == true) {
+				rectangles[3][6].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[2][0].setOnMouseClicked(e -> {
+				if(player.isValidClick(2, 0, rectangles) == true) {
+				rectangles[2][0].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[2][1].setOnMouseClicked(e -> {
+				if(player.isValidClick(2, 1, rectangles) == true) {
+				rectangles[2][1].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[2][2].setOnMouseClicked(e -> {
+				if(player.isValidClick(2, 2, rectangles) == true) {
+				rectangles[2][2].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[2][3].setOnMouseClicked(e -> {
+				if(player.isValidClick(2, 3, rectangles) == true) {
+				rectangles[2][3].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[2][4].setOnMouseClicked(e -> {
+				if(player.isValidClick(2, 4, rectangles) == true) {
+				rectangles[2][4].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[2][5].setOnMouseClicked(e -> {
+				if(player.isValidClick(2, 5, rectangles) == true) {
+				rectangles[2][5].setFill(rec1.getFill());
+
+				}
+			});
+			rectangles[2][6].setOnMouseClicked(e -> {
+				if(player.isValidClick(2, 6, rectangles) == true) {
+				rectangles[2][6].setFill(rec1.getFill());
+
+				}
+			});
 		
 		});
 		
 		
 		
 		
+		
+		// useful addtion here 
 		
 		
 		Button invert = (Button) root.lookup("#switch");

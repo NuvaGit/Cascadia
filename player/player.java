@@ -15,12 +15,16 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.Rectangle;
 
 public class player extends Habitat{
-	
+	public static boolean placed = true;
 static ArrayList<String> names = new ArrayList<String>();
 static public  int playercount;
 static public int CurrentPlayer = 0;
 public static ArrayList<String> Score = new ArrayList(); 
 
+
+public static void placed() {
+	placed = false;
+}
 
 public static int getplayercount() {
 	return playercount;
@@ -292,17 +296,23 @@ public static String StartingWildlifeToken(Tile x) {
 
 public static boolean isValidClick(int row, int col,Rectangle[][] rectangles) {
     // Check if the rectangle is adjacent to a filled rectangle
-    if (row > 0 && rectangles[row - 1][col].getFill() != Color.WHITE) {
+    if(row != 0 && col != 0 && row !=6 && col !=6) {
+	if (rectangles[row+1][col].getFill() != Color.WHITE || rectangles[row-1][col].getFill() != Color.WHITE || rectangles[row][col+1].getFill() != Color.WHITE|| rectangles[row][col-1].getFill() != Color.WHITE) {
         return true;
     }
-    if ( rectangles[row + 1][col].getFill() != Color.WHITE) {
+    }
+    if(row == 0 && col != 0)
+    if (rectangles[row+1][col].getFill() != Color.WHITE || rectangles[row][col+1].getFill() != Color.WHITE|| rectangles[row][col-1].getFill() != Color.WHITE) {
         return true;
     }
-    if (col > 0 && rectangles[row][col - 1].getFill() != Color.WHITE) {
-        return true;
-    }
-    if (rectangles[row][col + 1].getFill() != Color.WHITE) {
-        return true;
+    if(row == 0 )
+        if (rectangles[row+1][col].getFill() != Color.WHITE || rectangles[row][col+1].getFill() != Color.WHITE) {
+            return true;
+        }
+    if(row == 6 && col != 6 ) {
+        if ( rectangles[row][col+1].getFill() != Color.WHITE || rectangles[row-1][col].getFill() != Color.WHITE ||rectangles[row][col-1].getFill() != Color.WHITE) {
+            return true;
+        }
     }
 
     return false;

@@ -22,9 +22,7 @@ static public int CurrentPlayer = 0;
 public static ArrayList<String> Score = new ArrayList(); 
 
 
-public static void placed() {
-	placed = false;
-}
+
 
 public static int getplayercount() {
 	return playercount;

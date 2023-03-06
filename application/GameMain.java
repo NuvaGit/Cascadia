@@ -19,8 +19,11 @@ import player.player;
 
 public class GameMain extends player {
     private static Scene scene;
-    public static boolean placed = true;
     public static int i = 0;
+    public static String wildlifetokenholder;
+    public static int wildlifeX;
+    public static int wildlifeY;
+
 	///---------------------------------------------------------------
 	///---------------------------------------------------------------
 	///---------------------------------------------------------------
@@ -111,26 +114,26 @@ public class GameMain extends player {
         rectangles[3][4].setFill(player.getHabcolor(start2));
         rectangles[4][3].setFill(player.getHabcolor(start3));
         Text text = new Text(player.StartingWildlifeToken(start1));
-        text.setFont(Font.font("Arial", 18));
+        text.setFont(Font.font("Arial", 14));
         text.setFill(Color.WHITE);
-        text.setX(rectangles[3][3].getX() + (rectangles[3][3].getWidth() - text.getLayoutBounds().getWidth()) / 2);
+        text.setX(rectangles[3][3].getX() + (rectangles[3][3].getWidth() - text.getLayoutBounds().getWidth()) / 2-10);
         text.setY(rectangles[3][3].getY() + (rectangles[3][3].getHeight() - text.getLayoutBounds().getHeight()) / 2);
 
         root.getChildren().add(text);
         
         Text text1 = new Text(player.StartingWildlifeToken(start2));
-        text1.setFont(Font.font("Arial", 18));
+        text1.setFont(Font.font("Arial", 14));
         text1.setFill(Color.WHITE);
-        text1.setX(rectangles[3][4].getX() + (rectangles[3][4].getWidth() - text.getLayoutBounds().getWidth()) / 2);
+        text1.setX(rectangles[3][4].getX() + (rectangles[3][4].getWidth() - text.getLayoutBounds().getWidth()) / 2-10);
         text1.setY(rectangles[3][4].getY() + (rectangles[3][4].getHeight() - text.getLayoutBounds().getHeight()) / 2);
 
         root.getChildren().add(text1);
 		
         
         Text text2 = new Text(player.StartingWildlifeToken(start3));
-        text2.setFont(Font.font("Arial", 18));
+        text2.setFont(Font.font("Arial", 14));
         text2.setFill(Color.WHITE);
-        text2.setX(rectangles[4][3].getX() + (rectangles[4][3].getWidth() - text.getLayoutBounds().getWidth()) / 2);
+        text2.setX(rectangles[4][3].getX() + (rectangles[4][3].getWidth() - text.getLayoutBounds().getWidth()) / 2-10);
         text2.setY(rectangles[4][3].getY() + (rectangles[4][3].getHeight() - text.getLayoutBounds().getHeight()) / 2);
         root.getChildren().add(text2);
         
@@ -142,143 +145,162 @@ public class GameMain extends player {
 		
 		
 		
-		Button cull = (Button) root.lookup("#cull");
-
+		Button cull = (Button) root.lookup("#cull"); // place wildlife token 
+              
 		
 		
 		// rec clicked
 		rec1.setOnMouseClicked(event -> {	
-			
+			wildlifetokenholder = wildlifetoken1.getText();
 			rectangles[4][4].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 4, rectangles) == true) {
 					rectangles[4][4].setFill(rec1.getFill());
 					cull.setVisible(true);
-
+				     wildlifeX = 4;
+				     wildlifeY = 4;
 					}				
 			});
 			rectangles[3][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 5, rectangles) == true) {
 				rectangles[3][5].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 3;
+			     wildlifeY = 5;
 				}
 			});
 			rectangles[4][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 5, rectangles) == true) {
 				rectangles[4][5].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 4;
+			     wildlifeY = 5;
 				}
 			});
 			rectangles[4][6].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 6, rectangles) == true) {
 				rectangles[4][6].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 4;
+			     wildlifeY = 6;
 				}
 			});
 			rectangles[4][0].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 0, rectangles) == true) {
 					rectangles[4][0].setFill(rec1.getFill());
 					cull.setVisible(true);
-
+					wildlifeX = 4;
+				     wildlifeY = 0;
 					}				
 			});
 			rectangles[4][1].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 1, rectangles) == true) {
 				rectangles[4][1].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 4;
+			     wildlifeY = 1;
 				}
 			});
 			rectangles[4][2].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 2, rectangles) == true) {
 				rectangles[4][2].setFill(rec1.getFill());
-
+				wildlifeX = 4;
+			     wildlifeY = 2;
 				}
 			});
 			rectangles[3][0].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 0, rectangles) == true) {
 				rectangles[3][0].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 3;
+			     wildlifeY = 0;
 				}
 			});
 			rectangles[3][1].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 1, rectangles) == true) {
 				rectangles[3][1].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 3;
+			     wildlifeY = 1;
 				}
 			});
 			rectangles[3][2].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 2, rectangles) == true) {
 				rectangles[3][2].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 3;
+			     wildlifeY = 2;
 				}
 			});
 			rectangles[3][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 5, rectangles) == true) {
 				rectangles[3][5].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 3;
+			     wildlifeY = 5;
 				}
 			});
 			rectangles[3][6].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 6, rectangles) == true) {
 				rectangles[3][6].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 3;
+			     wildlifeY = 6;
 				}
 			});
 			rectangles[2][0].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 0, rectangles) == true) {
 				rectangles[2][0].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 2;
+			     wildlifeY = 0;
 				}
 			});
 			rectangles[2][1].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 1, rectangles) == true) {
 				rectangles[2][1].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 2;
+			     wildlifeY = 1;
 				}
 			});
 			rectangles[2][2].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 2, rectangles) == true) {
 				rectangles[2][2].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 2;
+			     wildlifeY = 2;
 				}
 			});
 			rectangles[2][3].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 3, rectangles) == true) {
 				rectangles[2][3].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 2;
+			     wildlifeY = 3;
 				}
 			});
 			rectangles[2][4].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 4, rectangles) == true) {
 				rectangles[2][4].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 2;
+			     wildlifeY = 4;
 				}
 			});
 			rectangles[2][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 5, rectangles) == true) {
 				rectangles[2][5].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 2;
+			     wildlifeY = 5;
 				}
 			});
 			rectangles[2][6].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 6, rectangles) == true) {
 				rectangles[2][6].setFill(rec1.getFill());
 				cull.setVisible(true);
-
+				wildlifeX = 2;
+			     wildlifeY = 6;
 				}
 			});
 		
@@ -303,7 +325,17 @@ public class GameMain extends player {
 		
 		
 		
-		
+		///cull
+		 Text temptext = new Text();
+		 temptext.setFont(Font.font("Arial", 14));
+		 temptext.setFill(Color.WHITE);
+		cull.setOnAction(event -> {
+			temptext.setText(wildlifetokenholder);
+			 temptext.setX(rectangles[wildlifeX][wildlifeY].getX() + (rectangles[wildlifeX][wildlifeY].getWidth() - text.getLayoutBounds().getWidth()) / 2-10);
+			 temptext.setY(rectangles[wildlifeX][wildlifeY].getY() + (rectangles[wildlifeX][wildlifeY].getHeight() - text.getLayoutBounds().getHeight()) / 2);
+
+		});
+		root.getChildren().add(temptext);
 		// useful addtion here 
 		
 		

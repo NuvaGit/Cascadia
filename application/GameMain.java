@@ -142,7 +142,8 @@ public class GameMain extends player {
 		
 		
 		
-		
+		Button cull = (Button) root.lookup("#cull");
+
 		
 		
 		// rec clicked
@@ -151,36 +152,42 @@ public class GameMain extends player {
 			rectangles[4][4].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 4, rectangles) == true) {
 					rectangles[4][4].setFill(rec1.getFill());
+					cull.setVisible(true);
 
 					}				
 			});
 			rectangles[3][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 5, rectangles) == true) {
 				rectangles[3][5].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[4][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 5, rectangles) == true) {
 				rectangles[4][5].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[4][6].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 6, rectangles) == true) {
 				rectangles[4][6].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[4][0].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 0, rectangles) == true) {
 					rectangles[4][0].setFill(rec1.getFill());
+					cull.setVisible(true);
 
 					}				
 			});
 			rectangles[4][1].setOnMouseClicked(e -> {
 				if(player.isValidClick(4, 1, rectangles) == true) {
 				rectangles[4][1].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
@@ -193,77 +200,105 @@ public class GameMain extends player {
 			rectangles[3][0].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 0, rectangles) == true) {
 				rectangles[3][0].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[3][1].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 1, rectangles) == true) {
 				rectangles[3][1].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[3][2].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 2, rectangles) == true) {
 				rectangles[3][2].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[3][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 5, rectangles) == true) {
 				rectangles[3][5].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[3][6].setOnMouseClicked(e -> {
 				if(player.isValidClick(3, 6, rectangles) == true) {
 				rectangles[3][6].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[2][0].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 0, rectangles) == true) {
 				rectangles[2][0].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[2][1].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 1, rectangles) == true) {
 				rectangles[2][1].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[2][2].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 2, rectangles) == true) {
 				rectangles[2][2].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[2][3].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 3, rectangles) == true) {
 				rectangles[2][3].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[2][4].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 4, rectangles) == true) {
 				rectangles[2][4].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[2][5].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 5, rectangles) == true) {
 				rectangles[2][5].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 			rectangles[2][6].setOnMouseClicked(e -> {
 				if(player.isValidClick(2, 6, rectangles) == true) {
 				rectangles[2][6].setFill(rec1.getFill());
+				cull.setVisible(true);
 
 				}
 			});
 		
 		});
+		
+		
+		
+// rec 2 clicked 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

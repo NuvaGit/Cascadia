@@ -82,6 +82,11 @@
             <Label id="label8" layoutX="129.0" layoutY="265.0" mouseTransparent="true" text="Label" />
             <Label id="label9" layoutX="129.0" layoutY="327.0" mouseTransparent="true" text="Label" />
             <Button id="switch" layoutX="117.0" layoutY="525.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-background-radius: 100; -fx-background-color: lime;" text="Button" />
+            <Button id="cull" layoutX="-4.0" layoutY="388.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="197.0" style="-fx-background-color: lime; -fx-background-radius: 100;" text="Place wildlife token" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
